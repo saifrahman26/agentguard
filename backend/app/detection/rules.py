@@ -389,7 +389,7 @@ class PromptInjectionRule(DetectionRule):
     risk_level = RiskLevel.CRITICAL
 
     INJECTION_PATTERNS = [
-        r"(?i)\b(ignore|disregard|forget)\s+((all|any)\s+)?(previous|prior|above|other\s+)?(instructions|prompts|rules|commands|directives)",
+        r"(?i)\b(ignore|disregard|forget)\s+((all|any)\s+)?((previous|prior|above|other)\s+)?(instructions|prompts|rules|commands|directives)",
         r"(?i)\b(system\s+override|admin\s+override|developer\s+mode\s+enabled)",
         r"(?i)\b(upload\s+tokens|exfiltrate\s+tokens|steal\s+api_key|send\s+api\s*key|leak\s+secrets)",
         r"(?i)\b(you\s+are\s+now\s+(an\s+)?unrestricted|dan\s+mode|jailbreak\s+mode)",

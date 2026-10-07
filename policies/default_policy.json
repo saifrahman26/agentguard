@@ -1,0 +1,102 @@
+{
+  "name": "default_policy",
+  "version": "1.0.0",
+  "description": "AgentGuard Default Security Policy",
+  "filesystem": {
+    "allowed_paths": [
+      "./project/**",
+      "./src/**",
+      "./tests/**",
+      "project/**",
+      "src/**",
+      "tests/**"
+    ],
+    "blocked_paths": [
+      "~/.ssh/**",
+      "~/.aws/**",
+      "~/.gnupg/**",
+      "/etc/**",
+      "/var/**",
+      "/root/**",
+      "C:/Windows/**",
+      "C:/Program Files/**",
+      "**/.env*",
+      "**/*.key",
+      "**/*.pem",
+      "**/*.id_rsa*",
+      "**/id_rsa*",
+      "**/.git/**",
+      "**/credentials*",
+      "**/id_ed25519*"
+    ]
+  },
+  "network": {
+    "default": "deny",
+    "allowed_domains": [
+      "api.github.com",
+      "pypi.org",
+      "files.pythonhosted.org",
+      "registry.npmjs.org",
+      "cdn.jsdelivr.net",
+      "raw.githubusercontent.com"
+    ],
+    "blocked_domains": [
+      "*"
+    ]
+  },
+  "shell": {
+    "allowed_commands": [
+      "python",
+      "pytest",
+      "git",
+      "pip",
+      "npm",
+      "echo",
+      "ls",
+      "dir",
+      "cat",
+      "node",
+      "pnpm",
+      "yarn",
+      "ruff",
+      "mypy",
+      "black"
+    ],
+    "blocked_commands": [
+      "sudo",
+      "rm -rf",
+      "chmod 777",
+      "curl",
+      "wget",
+      "nc",
+      "bash -i",
+      "sh -i",
+      "mkfs",
+      "dd",
+      "shutdown",
+      "reboot",
+      ":(){ :|:& };:"
+    ]
+  },
+  "packages": {
+    "allowed_packages": [
+      "pytest*",
+      "requests*",
+      "pydantic*",
+      "fastapi*",
+      "sqlalchemy*",
+      "uvicorn*",
+      "httpx*",
+      "numpy*",
+      "pandas*",
+      "python-*",
+      "*"
+    ],
+    "blocked_packages": [
+      "malware*",
+      "crypto-miner*",
+      "evil-package*",
+      "keylogger*"
+    ]
+  }
+}
